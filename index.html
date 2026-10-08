@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideMate - Biker Travel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">R</div>
+        <div>
+            <h2>RideMate</h2>
+            <small>RIDE • CONNECT • EXPLORE</small>
+        </div>
+    </div>
+
+    <nav>
+
+        <button class="nav-item active" data-page="dashboard">
+            🏠 Dashboard
+        </button>
+
+        <button class="nav-item" data-page="trips">
+            🗺️ My Trips
+        </button>
+
+        <button class="nav-item" data-page="riders">
+            👥 Find Riders
+        </button>
+
+        <button class="nav-item" data-page="garage">
+            🏍️ My Garage
+        </button>
+
+        <button class="nav-item" data-page="messages">
+            💬 Messages
+            <b>3</b>
+        </button>
+
+        <button class="nav-item" data-page="settings">
+            ⚙️ Settings
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="user-mini">
+            <div class="avatar">A</div>
+
+            <div>
+                <strong id="sideUser">Aqunas</strong>
+                <small>Rider</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div class="mobile-logo">
+            🏍️ RideMate
+        </div>
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search rider, bike or destination..."
+            >
+
+        </div>
+
+        <div class="top-right">
+
+            <button class="notification-btn" id="notificationBtn">
+                🔔
+                <i></i>
+            </button>
+
+            <div class="profile-mini">
+                <div class="avatar">A</div>
+
+                <div>
+                    <strong>Aqunas</strong>
+                    <small>Chennai</small>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboardPage" class="page active-page">
+
+        <div class="welcome">
+
+            <div>
+                <span class="label">BIKER TRAVEL PLATFORM</span>
+
+                <h1>
+                    Good morning, <span id="welcomeName">Aqunas</span> 👋
+                </h1>
+
+                <p>
+                    Find your crew. Plan your route. Enjoy the ride.
+                </p>
+            </div>
+
+            <button class="primary-btn" id="planRideBtn">
+                + Plan New Ride
+            </button>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <span>🏍️</span>
+                <div>
+                    <small>Total Trips</small>
+                    <strong id="totalTrips">18</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>👥</span>
+                <div>
+                    <small>Ride Partners</small>
+                    <strong id="totalRiders">42</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>📍</span>
+                <div>
+                    <small>Places Visited</small>
+                    <strong>14</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>🛣️</span>
+                <div>
+                    <small>Distance</small>
+                    <strong>4,860 km</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT TRIP -->
+
+        <div class="section-title">
+
+            <div>
+                <span class="label">UPCOMING ADVENTURE</span>
+                <h2>My Current Trip</h2>
+            </div>
+
+            <button class="map-btn" id="mapBtn">
+                📍 Open Route
+            </button>
+
+        </div>
+
+
+        <div class="trip-card">
+
+            <div class="trip-route">
+
+                <div class="location">
+                    <small>FROM</small>
+                    <strong id="fromLocation">Chennai</strong>
+                </div>
+
+                <div class="route">
+                    🏍️ ━━━━━━━━━ 🏁
+                </div>
+
+                <div class="location destination">
+                    <small>TO</small>
+                    <strong id="tripDestination">Ooty</strong>
+                </div>
+
+            </div>
+
+
+            <div class="trip-details">
+
+                <div>
+                    <small>DATE</small>
+                    <strong id="tripDate">15 Oct 2026</strong>
+                </div>
+
+                <div>
+                    <small>BIKE</small>
+                    <strong id="tripBike">Yamaha R15 V4</strong>
+                </div>
+
+                <div>
+                    <small>BUDGET</small>
+                    <strong id="tripBudget">₹5,000</strong>
+                </div>
+
+                <div>
+                    <small>RIDERS</small>
+                    <strong id="tripRiders">4 Riders</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION SEARCH -->
+
+        <div class="location-search">
+
+            <div>
+                <span class="label">EXPLORE DESTINATION</span>
+                <h2>Where do you want to ride?</h2>
+            </div>
+
+            <div class="location-form">
+
+                <input
+                    type="text"
+                    id="locationInput"
+                    placeholder="Search Ooty, Goa, Coorg..."
+                >
+
+                <button id="locationSearchBtn">
+                    Search Location
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIDERS -->
+
+        <div class="section-title">
+
+            <div>
+                <span class="label">RIDE COMMUNITY</span>
+                <h2>Find Your Ride Crew</h2>
+            </div>
+
+            <button class="text-btn" id="viewAllBtn">
+                View All →
+            </button>
+
+        </div>
+
+
+        <div class="filter-row">
+
+            <button class="filter active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter" data-filter="Ooty">
+                Ooty
+            </button>
+
+            <button class="filter" data-filter="Kodaikanal">
+                Kodaikanal
+            </button>
+
+            <button class="filter" data-filter="Coorg">
+                Coorg
+            </button>
+
+        </div>
+
+
+        <div class="riders" id="riderContainer">
+        </div>
+
+
+    </section>
+
+
+    <!-- MY TRIPS -->
+
+    <section id="tripsPage" class="page">
+
+        <div class="page-title">
+            <span class="label">TRAVEL HISTORY</span>
+            <h1>My Trips</h1>
+        </div>
+
+        <div class="empty-card">
+
+            <div>🗺️</div>
+
+            <h2>Your adventures</h2>
+
+            <p>
+                Your upcoming and completed trips will appear here.
+            </p>
+
+            <button class="primary-btn" id="newTripFromTrips">
+                + Create Trip
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RIDERS PAGE -->
+
+    <section id="ridersPage" class="page">
+
+        <div class="page-title">
+            <span class="label">COMMUNITY</span>
+            <h1>Find Riders</h1>
+        </div>
+
+        <div class="riders" id="allRidersContainer">
+        </div>
+
+    </section>
+
+
+    <!-- GARAGE -->
+
+    <section id="garagePage" class="page">
+
+        <div class="page-title">
+            <span class="label">MY GARAGE</span>
+            <h1>My Bike</h1>
+        </div>
+
+        <div class="garage-card">
+
+            <div class="bike-large">🏍️</div>
+
+            <div>
+                <span class="label">CURRENT BIKE</span>
+
+                <h2 id="garageBike">
+                    Yamaha R15 V4
+                </h2>
+
+                <p>
+                    155cc • Sports Bike • 2024
+                </p>
+
+                <button class="primary-btn">
+                    Edit Bike
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGES -->
+
+    <section id="messagesPage" class="page">
+
+        <div class="page-title">
+            <span class="label">COMMUNICATION</span>
+            <h1>Messages</h1>
+        </div>
+
+        <div class="message-card">
+
+            <div class="message">
+                <div class="avatar">K</div>
+
+                <div>
+                    <strong>Karthik Raj</strong>
+                    <p>
+                        Bro, Ooty ride confirmed for 15th?
+                    </p>
+                </div>
+
+                <small>10 min</small>
+            </div>
+
+
+            <div class="message">
+                <div class="avatar">R</div>
+
+                <div>
+                    <strong>Rahul S</strong>
+                    <p>
+                        Can I join the ride?
+                    </p>
+                </div>
+
+                <small>1 hr</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SETTINGS -->
+
+    <section id="settingsPage" class="page">
+
+        <div class="page-title">
+            <span class="label">ACCOUNT</span>
+            <h1>Settings</h1>
+        </div>
+
+        <div class="settings-card">
+
+            <label>
+                Rider Name
+
+                <input
+                    type="text"
+                    id="settingsName"
+                    value="Aqunas"
+                >
+
+            </label>
+
+            <label>
+                Native Place
+
+                <input
+                    type="text"
+                    value="Chennai"
+                >
+
+            </label>
+
+            <button class="primary-btn" id="saveSettings">
+                Save Changes
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ADD RIDE MODAL -->
+
+<div class="modal" id="tripModal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeModal">
+            ×
+        </button>
+
+        <span class="label">NEW ADVENTURE</span>
+
+        <h2>Plan Your Ride 🏍️</h2>
+
+        <p>
+            Enter your trip details to find matching riders.
+        </p>
+
+
+        <form id="tripForm">
+
+            <div class="form-grid">
+
+                <label>
+                    Rider Name
+                    <input
+                        type="text"
+                        id="riderName"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Phone Number
+                    <input
+                        type="tel"
+                        id="phone"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Native Place
+                    <input
+                        type="text"
+                        id="nativePlace"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Bike Model
+                    <input
+                        type="text"
+                        id="bikeModel"
+                        placeholder="Yamaha R15 V4"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Destination
+                    <input
+                        type="text"
+                        id="destination"
+                        placeholder="Ooty"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Travel Date
+                    <input
+                        type="date"
+                        id="travelDate"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Budget
+                    <input
+                        type="number"
+                        id="budget"
+                        placeholder="5000"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Number of Riders
+                    <input
+                        type="number"
+                        id="numberRiders"
+                        min="1"
+                        required
+                    >
+                </label>
+
+            </div>
+
+            <button class="create-btn" type="submit">
+                Create Ride →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
